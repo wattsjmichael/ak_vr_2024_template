@@ -1,0 +1,182 @@
+<krpano tour_mode="local" floor_height="160" map_angle="0" minimap_angle="0" debugkeys="true" debugmode="true" accomp="true">
+
+
+
+
+  <data if="device.mobile" name="map_fov" value="181" />
+  <data if="device.tablet" name="map_fov" value="181" />
+  <data if="device.desktop" name="map_fov" value="177" />
+
+
+
+  <action autorun="onstart" type="Javascript"><![CDATA[
+
+		window.accomploStrings = {
+			
+			'stair_1': "stair_1",
+			'stair_2': "stair_2",
+      'stair_3': "stair_3",
+      'stair_4': "stair_4",
+      ext_use: "extinguisher_use",
+			started_tour: "started_tour",
+			completed_tour: "completed_tour",
+      elev_phone:"elev_phone",
+            
+           
+		};
+
+    ]]>  </action>
+
+
+
+
+
+  <data name="item_lib_content"><![CDATA[
+      
+        <h3>Floor Feature Menu</h3>
+          <p>Stairs</span></p>
+        <div id="item-stairs"></div><br>
+         <p>Safety Features</p>
+       
+        <div class="item-link-container" data-id="fire_ext"></div>
+<div class="item-link-container" data-id="defib"></div>
+<div class="item-link-container" data-id="first_aid"></div>
+<!-- <div class="item-link-container" data-id="emer_phone"></div> -->
+<div class="item-link-container closest">
+</br>
+<div class="item-closest-container" data-id="fire_ext"></div>
+<div class="item-closest-container" data-id="defib"></div>
+<div class="item-closest-container" data-id="first_aid"></div>
+</div>
+
+        ]]>  </data>
+
+  <layer if="mode == 'explore'" name="items_hud" style="items_hud_style">
+    <layer name="first_aid" style="item_hud_style" url="../%$app_version%/skin/%$skin%/hotspots/first_aid.png" scale=".25" align="middle" onclick="hud_focus(90)" />
+    <layer name="defib" style="item_hud_style" url="../%$app_version%/skin/%$skin%/hotspots/aed.png" scale=".25" align="middle" x="-60" onclick="hud_focus(90)" />
+    <layer name="pull_station" style="item_hud_style" url="../%$app_version%/skin/%$skin%/hotspots/fire_alarm.png" scale=".25" align="middle" x="60" onclick="hud_focus(90)" />
+  </layer>
+  
+  <!-- pois -->
+
+  <data name="welcome_screen" type="placard"><![CDATA[ You are in explore mode. Take a moment to find the safety features and exits on your floor. ]]></data>
+  <!-- <data name="defib" type="placard" say="This automated external defibrillator is available for emergency use. The device provides step-by-step instructions on how to use it."><![CDATA[
+        This automated external defibrillator is available for emergency use.<br><br>The device provides step-by-step instructions on how to use it.
+	]]></data> -->
+  <!-- <data name="defib" type="video"><![CDATA[
+        [{"src": ["https://akproductionsmedia.streaming.mediaservices.windows.net/579baa13-4444-4ee1-b00e-49a5778b74c2/Gates-AED.ism/manifest"]}]
+	]]></data> -->
+
+  <data name="warden_phone" type="placard" say="Emergency phones are located inside of the stairwells on floors 2, 6, 10, and the basement.  Use them to relay information to building staff."><![CDATA[
+        <img src="images/Warden_phone_edit.jpg" width="260" height="400"/><br>Emergency phones are located inside of the stairwells on floors 2, 6, 10, and the basement.  Use them to relay information to building staff.
+	]]>  </data>
+  <data name="el_em_phone" type="placard" say="The building's elevator phones are monitored 24/7.  Building staff will be notified upon receipt of an entrapment call and will dispatch the elevator contractor."><![CDATA[
+        <img src="images/elevator_push.jpg" width="250" height="150"/><br>The building's elevator phones are monitored 24/7.  Building staff will be notified upon receipt of an entrapment call and will dispatch the elevator contractor. 
+	]]>  </data>
+  <data name="ff_phone_stair_poi" type="placard" say="These firefighter phones are used by first responders to communicate with the Fire Command Center."><![CDATA[
+        <img src="images/FF_phone_red.jpg" width="25%"/><br>These firefighter phones are used by first responders to communicate with the Fire Command Center. 
+	]]>  </data>
+
+  <data name="ff_phone_elev_poi" type="placard" say="These firefighter phones are used by first responders to communicate with the Fire Command Center."><![CDATA[
+        <img src="images/FF_phone_silver.jpg" width="25%"/><br>These firefighter phones are used by first responders to communicate with the Fire Command Center. 
+	]]>  </data>
+  <data name="emer_phone_poi" type="placard" say="Use these Emergency Phones to contact security in the event of an emergency or if you need assistance evacuating."><![CDATA[
+        <img src="images/emer_phone_poi.png" width="40%" /><br>Use these Emergency Phones to contact security in the event of an emergency or if you need assistance evacuating. 
+	]]>  </data>
+  <data name="pull_station" type="placard" say="Manual pull stations put the current floor, the floor above, and the floor below into alarm. They also alert building staff and the Fire Department."><![CDATA[
+        <img src="images/pull_station.jpg" width="30%"/><br>Manual pull stations put the current floor, the floor above, and the floor below into alarm. They also alert building staff and the Fire Department.
+	]]>  </data>
+  <data name="fire_ext_poi" type="video"><![CDATA[
+        {"id": "935518875"}
+	]]>  </data>
+
+  <data name="evac_chair_poi" type="video"><![CDATA[
+        {"id": "935591888"}
+	]]>  </data>
+
+  <!-- <data name="defib" type="video"><![CDATA[
+        [{ "src": ["https://akproductionsmedia.streaming.mediaservices.windows.net/579baa13-4444-4ee1-b00e-49a5778b74c2/Gates-AED.ism/manifest" ]}]
+	]]></data> -->
+
+  <data name="defib" type="placard" say="This automated external defibrillator comes with step-by-step instructions should you ever need to use it."><![CDATA[
+        <img src="images/aed.jpg" width="60%" /><br>This automated external defibrillator comes with step-by-step instructions should you ever need to use it. 
+	]]>  </data>
+
+    <data name="fld_stretcher" type="placard" say="This folding stretcher can be used to transport injured people in an emergency situation."><![CDATA[
+        <img src="images/stretcher.jpg" width="80%" /><br>This folding stretcher can be used to transport injured people in an emergency situation. 
+	]]>  </data>
+
+
+
+  <!-- <data name="evac_chair_poi" say="Evacuation chairs can be used to help evacuate someone with a mobility impairment. Floor wardens are trained on how to use them."><![CDATA[
+        <img src="images/evac_chair.jpg" /><br>Evacuation chairs can be used to help evacuate someone with a mobility impairment. Floor wardens are trained on how to use them.
+    ]]></data> -->
+  <data name="first_aid" say="This station contains basic First Aid supplies for minor conditions. Please seek professional medical help for serious injuries or ailments."><![CDATA[
+        <img src="images/first_aid.jpg" /><br> This station contains basic First Aid supplies for minor conditions. Please seek professional medical help for serious injuries or ailments.
+    ]]>  </data>
+
+  <data name="first_aid_wall" say="This station contains basic First Aid supplies for minor conditions. Please seek professional medical help for serious injuries or ailments."><![CDATA[
+        <img src="images/first_aid_kit_wall.jpg" /><br> This station contains basic First Aid supplies for minor conditions. Please seek professional medical help for serious injuries or ailments.
+    ]]>  </data>
+    
+  <!-- main app include -->
+  <include url="../%$app_version%/app.xml" />
+  <!-- <plugin if="mode == 'explore'" name="overlay" url="overlay_explore_nfcu.js" keep="true" visible="false" capture="true" /> -->
+
+
+  <!--Style overide All STYLE FIXES NEED TO BE AFTER APP.XML-->
+  <style name="aed" fov="80" url="images/defib.png" tt="Defibrillator" onclick="send_accomp('defib'); open_poi('defib')" />
+  <style name="em_shower" fov="80" url="hotspot/Emergency_Shower.png" tt="Emergency Shower" onclick="send_accomp('em_shower'); open_poi('em_shower_poi')" />
+  <style name="em_eyewash" fov="80" url="hotspot/eyewash_station.png" tt="Emergency Eyewash" onclick="send_accomp('em_eywash'); open_poi('em_eyewash_poi')" />
+  <style name="warden_phone" url="hotspot/phone.png" tt="Emergency Phone" onclick="open_poi('warden_phone')" />
+  <style name="ff_phone_stair" url="hotspot/phone.png" tt="Firefighter Phone" onclick="open_poi('ff_phone_stair_poi')" />
+  <style name="ff_phone_elev" url="hotspot/phone.png" tt="Firefighter Phone" onclick="open_poi('ff_phone_elev_poi')" />
+  <style name="emer_phone" url="hotspots/phone.png" tt="Emergency Phone" onclick="open_poi('emer_phone_poi')" />
+  <style name="aor" url="hotspot/mobility.png" tt="Area of Refuge" />
+  <style name="first_aid_wall" url="hotspots/first_aid.png" tt="First Aid" onclick="send_accomp('first_aid'); open_poi('first_aid_wall')" />
+  <style name="first_aid" url="hotspots/first_aid.png" tt="First Aid" onclick="send_accomp('first_aid'); open_poi('first_aid')" />
+   <style name="stretcher" url="hotspots/cyan_dot.png" tt="Folding Stretcher" onclick="send_accomp('stretcher'); open_poi('fld_stretcher')" />
+  <style name="evac_chair" url="hotspots/evac_chair.png" tt="Evacuation Chair" onclick="send_accomp('evac_chair'); open_vid_poi('evac_chair_poi');" />
+  <style name="up_stairs_floor_17" url="hotspots/arrow_up.png" tt="UP" onclick="teleport_to_scene(gs__4894);" />
+  <style name="down_stairs_floor_18" url="hotspots/arrow_down.png" tt="Down" onclick="teleport_to_scene(gs__4965);" />
+
+  <style name="tour_end" />
+
+
+  <!--NEW CODE-->
+
+  <style name="arch" keep="false" width="250" height="500" ty="150" alpha=".7" type="text" css="font-size:30px;text-align:center;weight:bold;color:#00ffff;padding-top:300px" bgcolor="0xffffff" bgroundedge="5" bgborder="4 0x00ffff 1" bgalpha=".1" oversampling="1" mipmapping="false" zorder="1" distorted="true" torigin="view" onclick="next_scene();" visible="true" enabled="true" onover="tween(alpha,1); tween(scale,.8)" onout="tween(alpha,.7); tween(scale,1)" atv="0" ath="0" capture="false" url="hotspots/Contrast_Arrows.png" />
+  <style name="static" fov="120" alpha="1" scale=".4" zorder="2" distorted="true" torigin="view" handcursor="false" enabled="true" visible="true" atv="0" capture="false" url="hotspots/cyan_dot.png" onloaded="add_tooltip()" />
+
+ <style name="no_arrow" fov="120" alpha="1" scale=".4" zorder="2" distorted="true" torigin="view" handcursor="false" enabled="true" visible="false" atv="0" capture="false"  onloaded="add_tooltip()" />
+<style name="crooked" keep="false" width="250" height="500" ty="150" alpha=".7" type="text" css="font-size:30px;text-align:center;weight:bold;color:#00ffff;padding-top:300px" bgcolor="0xffffff" bgroundedge="5" bgborder="4 0x00ffff 1" bgalpha=".1" oversampling="1" mipmapping="false" zorder="1" distorted="true" torigin="view" onclick="next_scene();" visible="true" enabled="true" onover="tween(alpha,1); tween(scale,.8)" onout="tween(alpha,.7); tween(scale,1)" tz="200" tx="700" atv="0" ath="0" capture="false" url="hotspots/Contrast_Arrows.png" />
+
+
+  <style name="crooked_6791" keep="false" width="250" height="500" ty="150" alpha=".7" type="text" css="font-size:30px;text-align:center;weight:bold;color:#00ffff;padding-top:300px" bgcolor="0xffffff" bgroundedge="5" bgborder="4 0x00ffff 1" bgalpha=".1" oversampling="1" mipmapping="false" zorder="1" distorted="true" torigin="view" onclick="next_scene();" visible="true" enabled="true" onover="tween(alpha,1); tween(scale,.8)" onout="tween(alpha,.7); tween(scale,1)" tz="200" tx="-50" atv="0" ath="0" ry="0" capture="false" url="hotspots/Contrast_Arrows.png" />
+
+
+  <!-- Overwrite Add tooltip IF you dont want tooltips in this (guided tour) mode -->
+
+
+    <layer name="ui_bar" style="ui_bar_style_explore">
+        <layer if="debugmode == true" interactivecontent="true" name="debug_button" type="text" html="!" y="10" x="145" scale=".16" onclick="toggle_debug();" bgcolor="0x000000" bgalpha=".2" css="font-family:Arial; font-size:11px; color:#FFFFFF;" padding="4" bgborder="1 0xffffff 1" />
+        <!-- <layer name="home_button" style="ui_icon_style" url="../app-vimeo/skin/%$skin%/home.png" x="15" onclick="plugin[scene].go_home()" />
+        <layer name="tour_button" style="ui_icon_style" url="../app-vimeo/skin/%$skin%/tour_off.png" y="9" x="40" onclick="toggle_tour()" /> -->
+        <layer name="floor_text" style="floortext_style" x="110" align="right" onclick="plugin[scene].floor_menu_dynamic();" />
+        <!-- <layer name="tower_menu" scale=".2" x="65" align="right" url="../app-vimeo/skin/%$skin%/hamburger.png" onclick="plugin[scene].floor_menu();" /> -->
+        <layer name="floor_menu" scale=".2" x="85" align="right" url="../app-vimeo/skin/%$skin%/hamburger.png" onclick="plugin[scene].floor_menu_dynamic();" />
+        <!-- <layer name="items_but" scale=".2" x="55" align="right" url="../app-vimeo/skin/%$skin%/feature_menu.png" onclick="plugin[overlay].show_item_lib(get(scene_name), get(scene[get(scene_name)].floor_id));" />
+        <layer name="video_lib" scale=".05" align="right" x="15" url="../app-vimeo/skin/%$skin%/play.png" onclick="plugin[overlay].show_vid_lib();" /> -->
+        <!-- <layer name="timer" style="floortext_style" align="center" handcursor="false" alpha=".75" html="00:00:00" /> -->
+        
+    </layer>
+
+
+
+
+  <!-- <include if="mode == 'explore'" url="explore_hcn.xml" /> -->
+  <!-- <plugin if="mode == 'explore'" name="overlay" url="gen_overlay_explore_bxp.js" keep="true" visible="false" capture="true" /> -->
+  <!-- end -->
+
+
+</krpano>

@@ -1,0 +1,53 @@
+<krpano>
+	<include if="mode == 'tour'" url="default_tour.xml" />
+	<data name="floor_map" type="json"><![CDATA[
+	{
+		"3": {"sort":3,"spawn":"GS__5010","angle":-42,"elev":300,"stairs":{},"map":{"name":"maps/floor_3_AM.png","scale":5.06,"mm_scale":0.05,"offset_x":0 ,"offset_y":0}},
+		"1": {"sort":4,"spawn":"GS__5101","angle":-42,"elev":0,"stairs":{},"map":{"name":"maps/floor_1_AM.png","scale":5.06,"mm_scale":0.05,"offset_x":0 ,"offset_y":0}}
+		
+		
+	}
+]]>	</data>
+
+	<action name="make_sym_links" scope="local">
+		<!-- Floor 25 -->
+		<!-- make_symbolic_link("gs__4833","gs__4845"); -->
+
+
+	</action>
+
+  <!--FLOOR 1-->
+<!-- #region -->
+
+
+
+<scene name="GS__5101" floor_id="1">
+<preview url="panos/GS__0196.tiles/preview.jpg" />
+<image prealign="0|226.7|0">
+<cube url="panos/GS__0196.tiles/pano_%s.jpg" />
+</image>
+<!-- <hotspot name="GS__5102" style="floorspot" linkedscene="GS__5102" tx="494" tz="503" />
+<hotspot name="GS__5127" style="floorspot" linkedscene="GS__5127" tx="-461" tz="-459" /> -->
+<hotspot name="start_tour" style="blank" atv="3" ath="-1"/>
+<hotspot name="pause_play" style="blank" fov="120" atv="3" ath="-1" next="rewind"/>
+<hotspot name="rewind" style="blank" fov="120" atv="3" ath="-1" next="tour_home" />
+<hotspot name="tour_home" style="blank" fov="120" atv="3" ath="-1" next="tour_toggle" />
+<hotspot name="tour_toggle" style="blank" fov="120" atv="3" ath="-1" next="hardware_chooser"/>
+<hotspot name="hardware_chooser" style="blank" fov="120" atv="3" ath="-1" />
+<hotspot name="desktop_intro" style="blank" fov="120" atv="3" ath="-1" next="desk_zoom"/>
+<hotspot name="desk_zoom" style="blank" fov="120" atv="3" ath="-1" next="desk_hud"/>
+<hotspot name="desk_hud" style="blank" fov="120" atv="3" ath="-1" next="desk_portals"/>
+<hotspot name="desk_portals" style="blank" fov="120" atv="3" ath="-1" next="floor_chooser"/>
+<hotspot name="mobile_intro" style="blank" fov="120" atv="3" ath="-1" next="mobile_zoom"/>
+<hotspot name="mobile_zoom" style="blank" fov="120" atv="3" ath="-1" next="mobile_hud"/>
+<hotspot name="mobile_hud" style="blank" fov="120" atv="3" ath="-1" next="mobile_portal"/>
+<hotspot name="mobile_portal" style="blank" fov="120" atv="3" ath="-1" next="floor_chooser"/>
+<hotspot name="floor_chooser" style="blank" fov="120" atv="3" ath="-1" />
+</scene>
+
+
+
+
+
+<include url="project_data.xml" />
+  </krpano>

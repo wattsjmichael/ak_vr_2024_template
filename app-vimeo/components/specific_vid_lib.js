@@ -1,0 +1,31 @@
+const asl = [
+    {
+        title: "Core Response Procedures",
+        videos: [
+            { url: "evac_video", title: "Evacuation", id: "935591921" },
+            { url: "shelter_ip_video", title: "Shelter-in-Place", id: "935590586" },
+            { url: "mobility_video", title: "Mobility Impaired Procedures", id: "935592039" }
+        ]
+    },
+    {
+        title: "Emergency Scenarios",
+        videos: [
+            { url: "disc_fire_vid", title: "If You Discover A Fire", id: "935591784" },
+            { url: "sprinkler_vid", title: "Sprinklers", id: "935592115" },
+            { url: "earthquake_vid", title: "Earthquake", id: "935591805" },
+            { url: "med_em_vid", title: "Medical Emergency", id: "935592018" },
+            { url: "bomb_vid", title: "Bomb Threat", id: "935591743" },
+            { url: "shoot_vid", title: "Active Shooter", id: "935588563" }
+        ]
+    },
+    {
+        title: "Floor Warden",
+        videos: [
+            { url: "fw_vid", title: "Floor Warden Duties", id: "935591940" },
+            { url: "search_vid", title: "Searching & Clearing A Floor", id: "935592066" }
+        ]
+    }
+  ];
+
+
+window.asl = asl;
